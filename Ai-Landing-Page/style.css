@@ -10,21 +10,31 @@
 
 body {
     text-align: center;
-        background: linear-gradient(
-        180deg,
-        #0f0f0f 0%,
-        #1a1a1a 50%,
-        #000000 100%
-    );
+    background: linear-gradient(180deg,
+            #0f0f0f 0%,
+            #1a1a1a 50%,
+            #000000 100%);
 }
-.container{
+
+.container {
     max-width: 1100px;
     margin: 0 auto;
 
 }
+/* 
 
+//////////////////////////////////
+
+        navbar section
+
+/////////////////////////////////
+
+*/
 a {
+    position: relative;
     color: black;
+    transition: 0.8s ease;
+    padding-bottom: 4px;
 }
 
 header {
@@ -40,7 +50,7 @@ header {
 }
 
 .navbar {
-    
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,7 +61,8 @@ header {
     display: flex;
     gap: 20px;
 }
-.hamburger{
+
+.hamburger {
     display: none;
 
 }
@@ -64,6 +75,7 @@ header {
     border: none;
     cursor: pointer;
     background-color: rgb(241, 238, 238);
+    transition: 0.1s ease-in-out;
 }
 
 
@@ -83,22 +95,42 @@ header {
     color: rgb(226, 222, 222);
 }
 
+/* 
+
+//////////////////////////////////
+
+        Content section
+
+/////////////////////////////////
+
+*/
+
+
 .title-content {
-    margin-top: 40px;
+   
     font-size: 40px;
     position: relative;
-    top: 60px;
+    bottom: 20px;
     color: white;
+    margin-bottom: 15px;
 
 }
 
 .content-sec {
+    margin-top: 130px;
+    padding: 50px;
+
+    background-color: black;
+    border-radius: 40px;
+    transition: transform 0.6s ease;
+
+}
+
+.card-sec {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 70px;
-    padding: 20px;
-    gap: 20px;
+    gap: 40px;
 }
 
 .card {
@@ -106,7 +138,7 @@ header {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 0px;
     width: 25%;
     text-align: center;
     padding: 20px;
@@ -115,7 +147,9 @@ header {
     position: relative;
     background-color: rgb(235, 233, 233);
     box-shadow: 5px 3px 4px black;
+    transition: transform 0.8s ease;
 }
+
 
 .card-text {
     margin-top: 100px;
@@ -129,7 +163,20 @@ header {
     border: none;
     background-color: black;
     color: white;
+    cursor: pointer;
+    transition: transform 0.4s ease;
 }
+
+
+/* 
+
+//////////////////////////////////
+
+        About section
+
+/////////////////////////////////
+
+*/
 
 .about-sec {
     display: flex;
@@ -137,10 +184,15 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-top: 100px;
-    padding: 40px 20px 70px 20px;;
+    padding: 40px 20px 70px 20px;
+    ;
     background-color: black;
     border-radius: 40px;
-    
+    transition: transform 0.6s ease;
+}
+
+.about-sec:hover {
+    transform: scale(1.03);
 }
 
 .about-title {
@@ -176,6 +228,17 @@ header {
     margin-bottom: 10px;
 }
 
+
+/* 
+
+//////////////////////////////////
+
+        Contact section
+
+/////////////////////////////////
+
+*/
+
 .contact-sec {
     display: flex;
     flex-direction: column;
@@ -186,7 +249,10 @@ header {
     padding: 40px 20px 70px 20px;
     background-color: black;
     border-radius: 40px;
+    transition: transform 0.6s ease;
 }
+
+
 
 .contact-us {
     display: flex;
@@ -235,6 +301,77 @@ header {
     border: none;
     outline: none;
 }
+
+
+/* 
+//////////////////////////////
+
+            hover section
+
+//////////////////////////////
+*/
+.card:hover {
+    transform: scale(1.08);
+}
+
+.contact-sec:hover,
+.content-sec:hover,
+.about-sec:hover {
+    transform: scale(1.04);
+}
+
+.nav-list-items:hover {
+    font-size: 27px;
+}
+
+.nav-list-items::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    height: 2px;
+    width: 0px;
+    transition: 0.7s ease;
+}
+
+.nav-list-items:hover::after {
+    width: 100%;
+}
+
+.card-btn:hover {
+    transform: scale(1.1);
+}
+
+.sign-in:hover,
+.sign-up:hover {
+    box-shadow: 2px 1px 6px white;
+    background-color: rgb(227, 225, 225);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
 
     .hamburger {
@@ -254,7 +391,7 @@ header {
         right: auto;
         width: 260px;
         height: 100vh;
-        
+
         background: rgba(0, 0, 0, 0.96);
         backdrop-filter: blur(10px);
 
@@ -263,13 +400,14 @@ header {
         z-index: 2000;
         display: flex;
         justify-content: center;
-        
+
         align-items: flex-start;
-        padding-top:130px ;
+        padding-top: 130px;
     }
-    .nav-list-items{
+
+    .nav-list-items {
         border-bottom: 2px solid white;
-        
+
     }
 
     .right-nav.active {
@@ -281,5 +419,6 @@ header {
         flex-direction: column;
         gap: 30px;
         align-items: center;
+        position: relative;
     }
 }

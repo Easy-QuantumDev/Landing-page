@@ -5,3 +5,5 @@ hamburger_btn.addEventListener("click", () => {
     right_nav.classList.toggle("active");
     console.log(right_nav.classList);
 });
+
+
